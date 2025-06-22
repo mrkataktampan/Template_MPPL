@@ -92,7 +92,7 @@
                      <div class="carousel-item">
                         <div class="banner_taital_main">
                            <h1 class="banner_taital">Recomendation <br><span style="color: #fe5b29;">For You</span></h1>
-                           <p class="banner_text">Ayam Panggang disajikan dengan tingkat kematangan yang pas, dan bumbu yang digunakan menyerap hingga keseluruh bagian</p>
+                           <p class="banner_text">Ayam Panggang yang disajikan memiliki tingkat kematangan yang pas, dan bumbu yang digunakan menyerap hingga keseluruh bagian</p>
                            <div class="btn_main">
                               <div class="contact_bt"><a href="http://localhost/order">Pesan</a></div>
                            </div>
