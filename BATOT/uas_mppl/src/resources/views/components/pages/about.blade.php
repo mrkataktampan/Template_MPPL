@@ -40,7 +40,7 @@
                      <div class="about_taital_box overlay-box">
                         <h1 class="about_taital">About <span>Us</span></h1>
                         <p class="about_text">
-                           Sistem dari website AHHH Restaurant ini menyediakan beberapa informasi, yaitu informasi terkait website ini sendiri dan juga menampilkan beberapa menu yang direkomendasikan. Sistem ini juga menerapkan CRUD (Create, Read, Update, Delete)
+                           Sistem dari website AHHH Restaurant ini menyediakan beberapa informasi, yaitu informasi terkait website ini sendiri dan juga menampilkan beberapa menu yang direkomendasikan.
                         </p>
                      </div>
                </div>

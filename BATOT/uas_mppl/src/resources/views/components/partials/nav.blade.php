@@ -27,9 +27,9 @@
 	  <div class="call_text_main">
          <div class="container">
             <div class="call_taital">
-               <div class="call_text"><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i><span class="padding_left_15">Location</span></a></div>
-               <div class="call_text"><a href="#"><i class="fa fa-phone" aria-hidden="true"></i><span class="padding_left_15">(+71) 8522369417</span></a></div>
-               <div class="call_text"><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i><span class="padding_left_15">demo@gmail.com</span></a></div>
+               <div class="call_text"><a href="https://maps.app.goo.gl/eaUDrHBMnfxaW91M9?g_st=aw"><i class="fa fa-map-marker" aria-hidden="true"></i><span class="padding_left_15">Citra Raya</span></a></div>
+               <div class="location_text" style="color: white;"><i class="fa fa-phone" aria-hidden="true"></i><span class="padding_left_15">(+62) 8129023122</span></div>
+               <div class="call_text"><a href="https://mail.google.com"><i class="fa fa-envelope" aria-hidden="true"></i><span class="padding_left_15">ahhhrestaurant@gmail.com</span></a></div>
             </div>
          </div>
       </div>
