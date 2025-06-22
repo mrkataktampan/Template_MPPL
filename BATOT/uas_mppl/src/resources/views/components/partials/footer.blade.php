@@ -30,14 +30,6 @@
                      <div class="location_text"><a href="https://maps.app.goo.gl/eaUDrHBMnfxaW91M9?g_st=aw"><i class="fa fa-map-marker" aria-hidden="true"></i><span class="padding_left_15">Citra Raya</span></a></div>
                      <div class="location_text" style="color: white;"><i class="fa fa-phone" aria-hidden="true"></i><span class="padding_left_15">(+62) 8129023122</span></div>
                      <div class="location_text"><a href="https://mail.google.com" style="display: inline-flex; align-items: center; text-decoration: none; color: white;"><i class="fa fa-envelope" aria-hidden="true"></i><span class="padding_left_15">ahhhrestaurant@gmail.com</span></a></div>
-                     <div class="social_icon">
-                        <ul>
-                           <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                           <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                           <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                           <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                        </ul>
-                     </div>
                   </div>
                </div>
             </div>
