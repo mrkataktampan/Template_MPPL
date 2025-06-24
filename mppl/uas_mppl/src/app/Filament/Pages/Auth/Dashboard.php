@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Filament\Admin\Pages;
+namespace App\Filament\Pages\Auth;
 
 use Filament\Pages\Dashboard as BaseDashboard;
 use App\Filament\Admin\Widgets\IncomeChart;
 use App\Filament\Admin\Widgets\CustomerChart;
+use App\Filament\Admin\Widgets\MonthlyRevenueStat;
 
 class Dashboard extends BaseDashboard
 {
@@ -13,6 +14,7 @@ class Dashboard extends BaseDashboard
         return [
             IncomeChart::class,
             CustomerChart::class,
+            MonthlyRevenueStat::class,
         ];
     }
 }

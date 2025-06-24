@@ -32,7 +32,12 @@ class OrderResource extends Resource
 
     public static function form(Form $form): Form
     {
-        $menuOptions = Menu::pluck('name', 'id');
+        // Ambil menu yang tersedia saja
+        $menuOptions = Menu::where('available', true)
+            ->get()
+            ->mapWithKeys(fn ($menu) => [
+                $menu->id => "{$menu->name} - Rp " . number_format($menu->price, 0),
+            ]);
 
         return $form
             ->schema([

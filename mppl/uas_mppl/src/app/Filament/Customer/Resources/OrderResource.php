@@ -33,14 +33,21 @@ class OrderResource extends Resource
 
     public static function form(Form $form): Form
     {
-        $menuOptions = Menu::pluck('name', 'id');
+        $menuOptions = Menu::where('available', true)
+            ->get()
+            ->mapWithKeys(fn ($menu) => [
+                $menu->id => "{$menu->name} - Rp " . number_format($menu->price, 0),
+            ]);
 
         return $form->schema([
+            // Otomatis isi customer dan status saat create
             Forms\Components\Hidden::make('customer_id')
-                ->default(fn () => Auth::id()),
+                ->default(fn () => Auth::id())
+                ->dehydrated(),
 
             Forms\Components\Hidden::make('status')
-                ->default('pending'),
+                ->default('pending')
+                ->dehydrated(),
 
             Forms\Components\DateTimePicker::make('order_time')
                 ->default(now())
@@ -48,6 +55,7 @@ class OrderResource extends Resource
 
             Forms\Components\Repeater::make('items')
                 ->relationship()
+                ->label('Item Pesanan')
                 ->schema([
                     Forms\Components\Select::make('menu_id')
                         ->label('Menu')
@@ -61,14 +69,17 @@ class OrderResource extends Resource
                         ->required(),
 
                     Forms\Components\Textarea::make('notes')
+                        ->label('Catatan')
                         ->columnSpanFull(),
                 ])
                 ->columns(3)
                 ->defaultItems(1)
                 ->addActionLabel('Tambah Menu')
                 ->deleteAction(fn (Forms\Components\Actions\Action $action) => $action->requiresConfirmation())
-                ->afterStateUpdated(fn (callable $set, $state) => $set('total', self::calculateTotal($state)))
-                ->afterStateHydrated(fn ($state, callable $set) => $set('total', self::calculateTotal($state))),
+                ->afterStateUpdated(fn (callable $set, $state) =>
+                    $set('total', self::calculateTotal($state)))
+                ->afterStateHydrated(fn ($state, callable $set) =>
+                    $set('total', self::calculateTotal($state))),
 
             Forms\Components\Placeholder::make('total_display')
                 ->label('Total Bayar')
@@ -78,8 +89,7 @@ class OrderResource extends Resource
 
             Forms\Components\Hidden::make('total')
                 ->dehydrateStateUsing(fn (callable $get) =>
-                    self::calculateTotal($get('items') ?? [])
-                ),
+                    self::calculateTotal($get('items') ?? [])),
         ]);
     }
 
@@ -113,8 +123,8 @@ class OrderResource extends Resource
                     ->sortable(),
 
                 Tables\Columns\TextColumn::make('items_count')
-                    ->counts('items')
-                    ->label('Jumlah Item'),
+                    ->label('Jumlah Item')
+                    ->counts('items'),
             ])
             ->filters([])
             ->actions([
@@ -141,6 +151,7 @@ class OrderResource extends Resource
 
     public static function getEloquentQuery(): \Illuminate\Database\Eloquent\Builder
     {
-        return parent::getEloquentQuery()->where('customer_id', Auth::id());
+        return parent::getEloquentQuery()
+            ->where('customer_id', Auth::id()); // Hanya pesanan milik customer login
     }
 }

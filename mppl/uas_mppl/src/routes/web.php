@@ -35,3 +35,10 @@ Route::get('/about', function () {
 Route::get('/order', function () {
     return view('components.pages.order');
 })->name('order');
+
+use App\Exports\MonthlyIncomeExport;
+use Maatwebsite\Excel\Facades\Excel;
+
+Route::get('/export-pemasukan', function () {
+    return Excel::download(new MonthlyIncomeExport, 'pemasukan-bulanan.xlsx');
+})->name('export.pemasukan');
